@@ -9,7 +9,7 @@ const nextConfig = {
     ],
   },
   compiler: {
-    styledComponents: true,
+    // styledComponents: true,
   },
   experimental: {
     mdxRs: true,
