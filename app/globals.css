@@ -4,7 +4,21 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #eee;
+}
+
 .main-container {
   display: flex;
   justify-content: center;
+}
+
+.posts-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }

@@ -4,21 +4,23 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
   margin-top: 1rem;
+  box-shadow: 10px 10px 5px 0px rgba(189, 189, 189, 0.75);
+
+  background-color: white;
 `;
 
 const Thumbnail = styled(Image)`
   width: 20rem;
   height: 20rem;
-  /* border-radius: 1rem; */
   border: 1px solid black;
-  margin: 1rem;
+  object-fit: cover;
 `;
 
 const Title = styled.div`
-  font-size: 2rem;
+  font-size: 1.5rem;
 `;
 const Content = styled.div`
-  font-size: 1.2rem;
+  font-size: 1rem;
 `;
 
 const TextDataContainer = styled.div`
@@ -37,7 +39,12 @@ const TextData = () => (
 const Project = () => {
   return (
     <Container>
-      <Thumbnail src="" alt="" />
+      <Thumbnail
+        src="https://d604h6pkko9r0.cloudfront.net/wp-content/uploads/2021/03/29113740/nextjs-cover.jpg"
+        alt=""
+        width={1000}
+        height={582}
+      />
       <TextData />
     </Container>
   );

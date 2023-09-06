@@ -9,25 +9,44 @@ const Container = styled.ul`
   z-index: 100;
 `;
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: black;
-  font-size: 1.2rem;
-`;
+// const StyledLink = styled(Link)`
+//   text-decoration: none;
+//   color: black;
+//   font-size: 1.2rem;
+// `;
+const ListStyle = {
+  display: "flex",
+  justifyContent: "space-evenly",
+  width: "15rem",
+  listStyle: "none",
+  zIndex: 100,
+};
+
+const LinkStyle = {
+  textDecoration: "none",
+  color: "black",
+  fontSize: "1.2rem",
+};
 
 const Nav = () => {
   return (
-    <Container>
+    <ul style={ListStyle}>
       <li>
-        <StyledLink href="/">Home</StyledLink>
+        <Link style={LinkStyle} href="/">
+          Home
+        </Link>
       </li>
       <li>
-        <StyledLink href="/blog">Blog</StyledLink>
+        <Link style={LinkStyle} href="/blog">
+          Blog
+        </Link>
       </li>
       <li>
-        <StyledLink href="/project">Project</StyledLink>
+        <Link style={LinkStyle} href="/project">
+          Project
+        </Link>
       </li>
-    </Container>
+    </ul>
   );
 };
 

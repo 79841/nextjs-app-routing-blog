@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
@@ -20,13 +19,13 @@ const Container = styled.div`
   padding-top: 10rem;
   width: 70rem;
   margin-bottom: 15rem;
-  animation: ${animation} 1s;
 `;
 
 const Phrases = styled.div`
   font-size: 4rem;
   text-align: center;
   margin-bottom: 3rem;
+  animation: ${animation} 1s;
 `;
 
 const ImageContainer = styled.div`
@@ -40,7 +39,7 @@ const StyledImage = styled(Image)`
   width: 30rem;
   height: 45rem;
   margin: 1rem;
-  border-radius: 2rem;
+  /* border-radius: 2rem; */
   background-color: #dcdcdc;
   object-fit: cover;
   box-shadow: 10px 10px 5px 0px rgba(189, 189, 189, 0.75);

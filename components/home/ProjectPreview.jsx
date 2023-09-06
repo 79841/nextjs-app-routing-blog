@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Project from "../project/Project";
 
 const Container = styled.div`
-  padding-top: 10rem;
+  margin-top: 5rem;
   margin-bottom: 15rem;
   width: 70rem;
 `;

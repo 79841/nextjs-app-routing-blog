@@ -8,11 +8,13 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  position: fixed;
+  width: 100%;
   padding-left: 15%;
   padding-right: 15%;
-  position: fixed;
   top: 0;
-  width: 100%;
+  height: 3rem;
+  box-sizing: border-box;
 `;
 
 const Topbar = () => {

@@ -15,11 +15,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} `}>
-        <Topbar />
-        <main className="main-container">
-          <StyledComponentsRegistry>{children} </StyledComponentsRegistry>
-        </main>
-        <Bottombar />
+        <StyledComponentsRegistry>
+          <Topbar />
+          <main className="main-container">{children}</main>
+          <Bottombar />
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
