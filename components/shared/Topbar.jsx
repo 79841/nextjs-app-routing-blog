@@ -10,10 +10,10 @@ const Container = styled.div`
   padding: 1rem;
   position: fixed;
   width: 100%;
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 10%;
+  padding-right: 10%;
   top: 0;
-  height: 3rem;
+  height: 5rem;
   box-sizing: border-box;
 `;
 

@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #eee;
+  background-color: #fdfdfd;
 }
 
 .main-container {
@@ -20,5 +20,9 @@ body {
 .posts-container {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+}
+.blogpost-container {
+  box-sizing: border-box;
   width: 100%;
 }

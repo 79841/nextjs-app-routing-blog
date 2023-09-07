@@ -17,10 +17,10 @@ const containerStyle = {
   display: "flex",
   flexDirection: "column",
   height: "100vh",
-  backgroundColor: "#aaa",
   left: "0",
   top: "3rem",
-  width: "50rem",
+  width: "35rem",
+  border: "1px solid black",
 };
 
 const LeftSidebar = async () => {
