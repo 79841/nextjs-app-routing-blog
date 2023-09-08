@@ -11,7 +11,7 @@ export default function PostsLayout({ children }) {
   return (
     <main className={"posts-container"}>
       <LeftSidebar />
-      {children}
+      <div className={"blog-container"}>{children}</div>
       <RightSidebar />
     </main>
   );

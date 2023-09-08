@@ -17,9 +17,16 @@ const Container = styled.div`
   box-sizing: border-box;
 `;
 
+const Test = styled.div`
+  width: 70rem;
+  background-color: black;
+  height: 10px;
+`;
+
 const Topbar = () => {
   return (
     <Container>
+      {/* <Test /> */}
       <Logo />
       <Nav />
     </Container>
