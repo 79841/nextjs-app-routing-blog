@@ -16,10 +16,10 @@ import BlogPostTree from "@/server/components/BlogPostTree";
 const containerStyle = {
   display: "flex",
   flexDirection: "column",
-  height: "100vh",
+  // height: "100vh",
   left: "0",
   top: "3rem",
-  width: "40rem",
+  width: "35rem",
 };
 
 const LeftSidebar = async () => {

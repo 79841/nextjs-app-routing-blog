@@ -9,12 +9,18 @@
 // `;
 
 const style = {
-  flexGrow: 1,
-  width: "100%",
+  // flexGrow: 1,
+  // width: "100%",
+  padding: "2rem",
+  paddingTop: "10rem",
 };
 
 const Blog = () => {
-  return <div style={style}>Blog</div>;
+  return (
+    <div style={style}>
+      Blog
+    </div>
+  );
 };
 
 export default Blog;

@@ -1,17 +1,33 @@
 import remarkGfm from "remark-gfm";
 import createMDX from "@next/mdx";
+import rehypePrism from "rehype-prism";
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    domains: [
+      "envri.eu",
+      "cdn3.vectorstock.com",
+      "legacy.reactjs.org",
+      "d604h6pkko9r0.cloudfront.net",
+    ],
+  },
+  compiler: {
+    styledComponents: true,
+  },
+  experimental: {
+    mdxRs: true,
+  },
+};
 
 const withMDX = createMDX({
   options: {
     extension: /\.mdx?$/,
     remarkPlugins: [remarkGfm],
-    rehypePlugins: [],
+    rehypePlugins: [rehypePrism],
     // If you use `MDXProvider`, uncomment the following line.
-    // providerImportSource: "@mdx-js/react",
+    providerImportSource: "@mdx-js/react",
   },
 });
 
-module.exports = withMDX(nextConfig);
+export default withMDX(nextConfig);

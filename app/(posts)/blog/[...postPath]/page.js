@@ -1,4 +1,5 @@
 "use client";
+import MdxViewer from "@/components/mdxViewer";
 import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -6,10 +7,11 @@ import { styled } from "styled-components";
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
-  /* border: 1px solid black; */
+  padding: 2rem;
+  padding-top: 7rem;
   box-sizing: border-box;
 `;
+
 export default function Page({ params }) {
   const Post = dynamic(
     () =>
@@ -22,9 +24,14 @@ export default function Page({ params }) {
     }
   );
 
+  
+
   return (
     <Container>
-      <Post />
+      <MdxViewer>
+        <Post />
+      </MdxViewer>
+      <IndexTable />
     </Container>
   );
 }
