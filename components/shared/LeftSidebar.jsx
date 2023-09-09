@@ -19,7 +19,8 @@ const containerStyle = {
   // height: "100vh",
   left: "0",
   top: "3rem",
-  width: "35rem",
+  width: "45rem",
+  minWidth: "20rem",
 };
 
 const LeftSidebar = async () => {

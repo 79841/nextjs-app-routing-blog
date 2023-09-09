@@ -24,7 +24,7 @@ const Container = styled.div`
     position: absolute;
     width: 15rem;
     top: 10rem;
-    right: 2rem;
+    right: 3rem;
   }
 `;
 

@@ -7,7 +7,7 @@ import { styled } from "styled-components";
 
 const Container = styled.div`
   width: 100%;
-  padding: 2rem;
+  /* padding: 2rem; */
   padding-top: 7rem;
   box-sizing: border-box;
 `;
@@ -24,14 +24,11 @@ export default function Page({ params }) {
     }
   );
 
-  
-
   return (
     <Container>
       <MdxViewer>
         <Post />
       </MdxViewer>
-      <IndexTable />
     </Container>
   );
 }
