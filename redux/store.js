@@ -1,16 +1,17 @@
 // redux/store.js
 
 import { configureStore } from "@reduxjs/toolkit";
-import postSelectorSlice from "./postSelectorSlice";
-import postIndexTableSlice from "./postIndexTableSlice";
+import postSelectorSlice from "./features/postSelectorSlice";
+import postIndexTableMakerSlice from "./features/postIndexTableMakerSlice";
 
 const initialState = {};
 
 const store = configureStore({
   reducer: {
     postSelector: postSelectorSlice,
-    postIndexTable: postIndexTableSlice,
+    postIndexTableMaker: postIndexTableMakerSlice,
   },
+  devTools: process.env.NODE_ENV !== "production",
   preloadedState: initialState,
 });
 

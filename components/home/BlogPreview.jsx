@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import styled from "styled-components";
-import BlogPost from "../blog/BlogPost";
+import BlogPostCard from "./BlogPost";
 
 const Container = styled.div`
   padding-top: 5rem;
@@ -26,9 +26,9 @@ const BlogPreview = ({ scrollPointRef }) => {
     <Container ref={scrollPointRef}>
       <Index>Blog</Index>
       <BlogPostContainer>
-        <BlogPost />
-        <BlogPost />
-        <BlogPost />
+        <BlogPostCard />
+        <BlogPostCard />
+        <BlogPostCard />
       </BlogPostContainer>
     </Container>
   );

@@ -29,8 +29,6 @@ const DynamicImage = ({ alt, src }) => {
       });
   }, [src]);
 
-
-
   return (
     <div
       ref={ref}
@@ -39,18 +37,24 @@ const DynamicImage = ({ alt, src }) => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        marginTop:"2rem"
+        marginTop: "2rem",
+        position: "relative",
       }}
     >
       {imageSize !== null ? (
-          <NextImage
-            alt={alt}
-            src={src}
-            width={Math.round(imageSize[0])}
-            height={Math.round(imageSize[1])}
-            quality={100}
-            style={{ objectFit: "contain" }}
-          />
+        <NextImage
+          alt={alt}
+          src={src}
+          width={Math.round(imageSize[0])}
+          height={Math.round(imageSize[1])}
+          quality={100}
+          style={{
+            objectFit: "contain",
+            maxHeight: "30rem",
+            width: "100%",
+            height: "auto",
+          }}
+        />
       ) : (
         <h1>Loading...</h1>
       )}

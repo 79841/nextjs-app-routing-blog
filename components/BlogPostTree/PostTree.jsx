@@ -14,74 +14,18 @@ import { useDispatch, useSelector } from "react-redux";
 import useSelectPost from "@/hooks/useSelectPost";
 import { Provider } from "react-redux";
 import store from "@/redux/store";
-import { select } from "@/redux/postSelectorSlice";
+import { select } from "@/redux/features/postSelectorSlice";
 import Title, { TitleButton, TitleLink, TitleVerticalBar } from "./Title";
 import { blogPath } from "./config";
+import MainCategory from "./MainCategory";
+import Post from "./Post";
 
 const Container = styled.div`
-  position: relative;
-  & > div {
-    position: absolute;
-    width: 15rem;
-    top: 10rem;
-    right: 3rem;
-  }
+  position: sticky;
+  width: 15rem;
+  top: 10rem;
+  right: 0;
 `;
-
-const MainCategoryContainer = styled.div`
-  & > ul {
-    font-size: ${MainCategoryFontSize};
-    font-weight: ${MainCategoryFontWeight};
-    list-style: none;
-  }
-`;
-
-const StyledLi = styled.li`
-  display: flex;
-  align-items: center;
-  font-size: ${postTreeFontSize};
-  font-weight: normal;
-  height: ${postTreeBoxHeight};
-`;
-
-const Post = ({ tree }) => {
-  const handleClick = useBptContext();
-  if (tree.name === "index.mdx") {
-    return null;
-  }
-  const link = `/blog${tree.path.slice(blogPath.length)}`;
-  // const link = filePath.slice(filePath.lastIndexOf("."));
-  return (
-    <StyledLi>
-      <TitleLink href={link}>
-        <TitleButton onClick={handleClick}>
-          {Array.from({
-            length: tree.path.slice(blogPath.length).split("/").length - 2,
-          }).map((_, i) => (
-            <TitleVerticalBar key={i} />
-          ))}
-          {tree.name.slice(0, tree.name.lastIndexOf("."))}
-        </TitleButton>
-      </TitleLink>
-    </StyledLi>
-  );
-};
-
-const MainCategory = ({ name, path, branches }) => {
-  return (
-    <MainCategoryContainer>
-      {name !== "root" ? (
-        <Title>
-          <TitleLink href={`/blog${path.slice(blogPath.length)}/index.mdx`}>
-            {name}
-          </TitleLink>
-        </Title>
-      ) : null}
-
-      <ul>{branches}</ul>
-    </MainCategoryContainer>
-  );
-};
 
 const Category = ({ tree }) => {
   const makeBranches = (tree) =>
@@ -136,9 +80,7 @@ const PostTree = ({ tree }) => {
   return (
     <BptContext.Provider value={handleSelect}>
       <Container>
-        <div>
-          <LinkTree tree={tree} />
-        </div>
+        <LinkTree tree={tree} />
       </Container>
     </BptContext.Provider>
   );

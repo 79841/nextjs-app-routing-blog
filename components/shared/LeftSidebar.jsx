@@ -16,11 +16,13 @@ import BlogPostTree from "@/server/components/BlogPostTree";
 const containerStyle = {
   display: "flex",
   flexDirection: "column",
-  // height: "100vh",
+  height: "100vh",
   left: "0",
   top: "3rem",
   width: "45rem",
   minWidth: "20rem",
+  alignItems: "flex-end",
+  paddingRight: "3rem",
 };
 
 const LeftSidebar = async () => {

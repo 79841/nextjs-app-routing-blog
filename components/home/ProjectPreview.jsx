@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import styled from "styled-components";
-import Project from "../project/Project";
+import ProjectPostBox from "./ProjectPostBox";
 
 const Container = styled.div`
   margin-top: 5rem;
@@ -20,8 +20,8 @@ const ProjectPreview = ({ scrollPointRef }) => {
   return (
     <Container ref={scrollPointRef}>
       <Index>Project</Index>
-      <Project />
-      <Project />
+      <ProjectPostBox />
+      <ProjectPostBox />
     </Container>
   );
 };

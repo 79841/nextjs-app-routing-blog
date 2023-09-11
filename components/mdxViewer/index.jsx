@@ -5,9 +5,9 @@ import "github-markdown-css";
 import { styled } from "styled-components";
 import Image from "next/image";
 import DynamicImage from "./DynamicImage";
-import IndexTable from "./indexTable";
+import IndexTable from "./PostIndexTable";
 import "./styles.css";
-import PostIndex from "./indexTable/PostIndex";
+import PostIndex from "./PostIndexTable/PostIndex";
 
 const MarkDownContainer = styled.div`
   width: 100%;
@@ -34,15 +34,29 @@ const ContentContainer = styled.div`
   min-width: 40rem;
 `;
 
-const IndexTableContainer = styled.div`
-  min-width: 35rem;
-  height: 100%;
-  margin: 3rem;
-`;
+// const IndexTableContainer = styled.div`
+//   min-width: 35rem;
+//   height: 100%;
+//   margin: 3rem;
+// `;
 
 const MdxViewer = ({ children }) => {
   const components = {
-    h1: PostIndex,
+    h1: ({ children }) => (
+      <h1>
+        <PostIndex level={1}>{children}</PostIndex>
+      </h1>
+    ),
+    h2: ({ children }) => (
+      <h1>
+        <PostIndex level={2}>{children}</PostIndex>
+      </h1>
+    ),
+    h3: ({ children }) => (
+      <h1>
+        <PostIndex level={3}>{children}</PostIndex>
+      </h1>
+    ),
 
     pre: ({ children }) => <>{children}</>,
     code: CodeBlock,
@@ -60,9 +74,9 @@ const MdxViewer = ({ children }) => {
           </MarkDownContainer>
         </MDXProvider>
       </ContentContainer>
-      <IndexTableContainer>
+      {/* <IndexTableContainer>
         <IndexTable />
-      </IndexTableContainer>
+      </IndexTableContainer> */}
     </Container>
   );
 };

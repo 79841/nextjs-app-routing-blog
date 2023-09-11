@@ -16,13 +16,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} `}>
-        {/* <Providers> */}
-        <StyledComponentsRegistry>
-          <Topbar />
-          <main className="main-container">{children}</main>
-          <Bottombar />
-        </StyledComponentsRegistry>
-        {/* </Providers> */}
+        <Providers>
+          <StyledComponentsRegistry>
+            <Topbar />
+            <main className="main-container">{children}</main>
+            <Bottombar />
+          </StyledComponentsRegistry>
+        </Providers>
       </body>
     </html>
   );
