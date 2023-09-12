@@ -6,9 +6,10 @@ const style = {
   // height: "100vh",
   right: 0,
   top: "3rem",
-  width: "45rem",
+  width: "30%",
   minWidth: "20rem",
-  paddingLeft: "3rem",
+  paddingLeft: "2rem",
+  height: "100vh",
 };
 
 const RightSidebar = () => {

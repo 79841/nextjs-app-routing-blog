@@ -4,6 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   postIndexTable: [],
+  currentContent: null,
 };
 
 const postIndexTableMakerSlice = createSlice({
@@ -11,13 +12,17 @@ const postIndexTableMakerSlice = createSlice({
   initialState,
   reducers: {
     add: (state, action) => {
-      const postName = action.payload;
-      if (!state.postIndexTable.includes(postName))
+      const postIndex = action.payload;
+      if (!state.postIndexTable.includes(postIndex))
         state.postIndexTable.push(action.payload);
     },
     reset: () => initialState,
+    setCurrentContent: (state, action) => {
+      state.currentContent = action.payload;
+    },
   },
 });
 
-export const { add, reset } = postIndexTableMakerSlice.actions;
+export const { add, reset, setCurrentContent } =
+  postIndexTableMakerSlice.actions;
 export default postIndexTableMakerSlice.reducer;

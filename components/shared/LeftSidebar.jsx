@@ -19,10 +19,10 @@ const containerStyle = {
   height: "100vh",
   left: "0",
   top: "3rem",
-  width: "45rem",
+  width: "30%",
   minWidth: "20rem",
   alignItems: "flex-end",
-  paddingRight: "3rem",
+  paddingRight: "2rem",
 };
 
 const LeftSidebar = async () => {

@@ -16,11 +16,7 @@ const style = {
 };
 
 const Blog = () => {
-  return (
-    <div style={style}>
-      Blog
-    </div>
-  );
+  return <div style={style}>Blog</div>;
 };
 
 export default Blog;

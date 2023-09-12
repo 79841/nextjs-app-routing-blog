@@ -20,24 +20,17 @@ body {
 .posts-container {
   display: flex;
   width: 100%;
-  min-height:100vh;
+  min-height: 100vh;
 }
-
-/* .left-sidebar {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  left: 0;
-  top: 3rem;
-  width: 70rem;
-  background-color: red;
-} */
 
 .blog-container {
   box-sizing: border-box;
-  flex: 1;
+  width: 40%;
+  min-width: 50rem;
+  /* flex: 1; */
 }
 
 .blogpost-container {
+  /* width: 40%; */
   box-sizing: border-box;
 }

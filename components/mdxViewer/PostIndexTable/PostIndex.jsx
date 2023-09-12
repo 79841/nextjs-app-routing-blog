@@ -5,15 +5,25 @@ import { styled } from "styled-components";
 
 const PostIndex = ({ children, level }) => {
   const dispatch = useDispatch();
+  const ref = useRef(null);
 
   useEffect(() => {
-    dispatch(add({ name: children, level }));
+    function handleScroll() {}
+
+    // dispatch(add({ name: children, level }));
+    dispatch(add({ ref: ref.current, level }));
+    window.addEventListener("scroll", handleScroll);
     return () => {
       dispatch(reset());
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [dispatch, children, level]);
 
-  return <div id={children}>{children}</div>;
+  return (
+    <div ref={ref} id={children}>
+      {children}
+    </div>
+  );
 };
 
 export default PostIndex;
