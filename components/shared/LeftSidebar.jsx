@@ -1,7 +1,7 @@
 // "use client";
 // import { styled } from "styled-components";
 
-import BlogPostTree from "@/server/components/BlogPostTree";
+import PostTree from "@/server/components/PostTree";
 
 // const Container = styled.div`
 //   display: flex;
@@ -25,10 +25,10 @@ const containerStyle = {
   paddingRight: "2rem",
 };
 
-const LeftSidebar = async () => {
+const LeftSidebar = async ({ postsDir }) => {
   return (
     <div style={containerStyle}>
-      <BlogPostTree />
+      <PostTree postsDir={postsDir} />
     </div>
   );
 };

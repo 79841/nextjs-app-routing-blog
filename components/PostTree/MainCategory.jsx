@@ -1,6 +1,10 @@
 import { styled } from "styled-components";
 import Title, { TitleButton, TitleLink } from "./Title";
-import { MainCategoryFontSize, MainCategoryFontWeight } from "./style";
+import {
+  MainCategoryFontSize,
+  MainCategoryFontWeight,
+  postTreeFontSize,
+} from "./style";
 import { blogPath } from "./config";
 import { useBptContext } from "./PostTree";
 
@@ -10,6 +14,17 @@ const MainCategoryContainer = styled.div`
     font-weight: ${MainCategoryFontWeight};
     list-style: none;
   } */
+`;
+
+const List = styled.ul`
+  color: black;
+  font-size: ${postTreeFontSize};
+  font-weight: normal;
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  /* max-height: 0; */
+  /* transition: max-height 0.5s ease-in-out; */
 `;
 
 const MainCategory = ({ name, path, branches }) => {
@@ -31,7 +46,7 @@ const MainCategory = ({ name, path, branches }) => {
           </TitleLink>
         </Title>
       ) : null}
-      <ul>{branches}</ul>
+      <List>{branches}</List>
     </MainCategoryContainer>
   );
 };

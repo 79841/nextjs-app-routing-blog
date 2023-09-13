@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import { Link } from "react-scroll";
 import { useSelector } from "react-redux";
 import { styled } from "styled-components";
 import { highlightColor, normalColor } from "./style";
@@ -29,19 +29,16 @@ const Index = styled.div`
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: ${({ color }) => color};
+  cursor: pointer;
+  &:hover {
+    color: ${highlightColor};
+  }
 `;
 
 const PostIndexTable = () => {
   const postTable = useSelector(
     (state) => state.postIndexTableMaker.postIndexTable
   );
-
-  const handleMouseOver = ({ target }) => {
-    target.style.color = highlightColor;
-  };
-  const handleMouseOut = ({ target }) => {
-    target.style.color = normalColor;
-  };
 
   const [currentContent, setCurrentContent] = useState(null);
 
@@ -63,27 +60,36 @@ const PostIndexTable = () => {
           return acc;
         }
       });
+      // console.log(currentContent);
       setCurrentContent(currentContent.ref.innerText);
     };
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  });
+  }, [postTable]);
+  console.log("render");
   return (
     <Container>
       {postTable.map((postIndex, i) => {
         const indexName = postIndex.ref.innerText;
+        console.log("check");
+        const color =
+          indexName === currentContent ? highlightColor : normalColor;
         return (
           <StyledLink
             key={i}
-            href={`#${indexName}`}
-            color={indexName == currentContent ? highlightColor : normalColor}
+            to={`${indexName}`}
+            activeClass="active"
+            spy={true}
+            smooth={true}
+            color={color}
           >
-            <Index onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+            <Index>
               {Array.from({ length: postIndex.level }).map((_, i) => (
                 <SpaceByLevel key={i} />
               ))}
+
               {indexName}
             </Index>
           </StyledLink>

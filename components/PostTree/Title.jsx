@@ -21,11 +21,14 @@ export const TitleButton = styled.button`
 `;
 
 export const TitleVerticalBar = styled.div`
-  width: 1px;
-  height: ${postTreeBoxHeight};
+  /* width: 1px; */
+
+  /* height: ${postTreeBoxHeight}; */
+  width: 1rem;
+  height: 100%;
   background-color: #515151;
-  margin-left: 0.3rem;
-  margin-right: 1.7rem;
+  /* margin-left: 0.3rem;
+  margin-right: 1.7rem; */
 `;
 
 export const ArrowButton = styled.button`

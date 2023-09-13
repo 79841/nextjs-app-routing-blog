@@ -1,4 +1,4 @@
-import ClientBlogPostTree from "@/components/BlogPostTree/PostTree";
+import ClientPostTree from "@/components/PostTree/PostTree";
 import fs from "fs";
 
 const makeFileBasedPostTree = (
@@ -31,10 +31,9 @@ const makeFileBasedPostTree = (
   return fileTree;
 };
 
-const BlogPostTree = () => {
-  const blogPostsDir = "./posts/blog";
-  const postTree = makeFileBasedPostTree(blogPostsDir);
-  return <ClientBlogPostTree tree={postTree} />;
+const PostTree = ({ postsDir }) => {
+  const postTree = makeFileBasedPostTree(postsDir);
+  return <ClientPostTree tree={postTree} />;
 };
 
-export default BlogPostTree;
+export default PostTree;

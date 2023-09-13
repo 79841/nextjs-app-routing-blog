@@ -2,6 +2,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 import BlogPostCard from "./BlogPost";
+import { ScrollShowBox } from "../ShowBox";
 
 const Container = styled.div`
   padding-top: 5rem;
@@ -24,12 +25,16 @@ const BlogPostContainer = styled.div`
 const BlogPreview = ({ scrollPointRef }) => {
   return (
     <Container ref={scrollPointRef}>
-      <Index>Blog</Index>
-      <BlogPostContainer>
-        <BlogPostCard />
-        <BlogPostCard />
-        <BlogPostCard />
-      </BlogPostContainer>
+      <ScrollShowBox>
+        <Index>Blog</Index>
+      </ScrollShowBox>
+      <ScrollShowBox>
+        <BlogPostContainer>
+          <BlogPostCard />
+          <BlogPostCard />
+          <BlogPostCard />
+        </BlogPostContainer>
+      </ScrollShowBox>
     </Container>
   );
 };

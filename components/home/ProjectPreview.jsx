@@ -2,6 +2,7 @@
 import Image from "next/image";
 import styled from "styled-components";
 import ProjectPostBox from "./ProjectPostBox";
+import { ScrollShowBox } from "../ShowBox";
 
 const Container = styled.div`
   margin-top: 5rem;
@@ -19,9 +20,13 @@ const Index = styled.div`
 const ProjectPreview = ({ scrollPointRef }) => {
   return (
     <Container ref={scrollPointRef}>
-      <Index>Project</Index>
-      <ProjectPostBox />
-      <ProjectPostBox />
+      <ScrollShowBox>
+        <Index>Project</Index>
+      </ScrollShowBox>
+      <ScrollShowBox>
+        <ProjectPostBox />
+        <ProjectPostBox />
+      </ScrollShowBox>
     </Container>
   );
 };
