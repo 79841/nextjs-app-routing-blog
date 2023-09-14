@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { Suspense } from "react";
 import { MDXProvider } from "@mdx-js/react";
 import CodeBlock from "./CodeBlock";
 import "github-markdown-css";
@@ -43,6 +43,8 @@ const ContentContainer = styled.div`
 // `;
 
 const MdxViewer = ({ filePath }) => {
+  console.log("mdxviewer");
+  console.log(filePath);
   const Post = dynamic(
     () =>
       import(`@/posts/blog/${filePath.postPath.join("/")}`).catch((err) => {
@@ -83,7 +85,9 @@ const MdxViewer = ({ filePath }) => {
       <ContentContainer>
         <MDXProvider components={components}>
           <MarkDownContainer className="markdown-body">
-            <Post />
+            <Suspense>
+              <Post />
+            </Suspense>
           </MarkDownContainer>
         </MDXProvider>
       </ContentContainer>

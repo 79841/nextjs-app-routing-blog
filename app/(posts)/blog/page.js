@@ -1,7 +1,7 @@
-"use client";
+// "use client";
 // import { styled } from "styled-components";
 
-import { useParams } from "next/navigation";
+// import { useParams } from "next/navigation";
 
 // const Container = styled.div`
 //   flex-grow: 1;
@@ -17,9 +17,7 @@ const style = {
   paddingTop: "10rem",
 };
 
-const Blog = ({ params }) => {
-  // const params = useParams();
-  console.log(params);
+const Blog = () => {
   return <div style={style}>Blog</div>;
 };
 

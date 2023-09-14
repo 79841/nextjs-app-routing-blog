@@ -1,4 +1,6 @@
-import MdxViewer from "@/components/mdxViewer";
+// "use client";
+// import MdxViewer from "@/components/mdxViewer";
+// import { useParams } from "next/navigation";
 
 const containerStyle = {
   width: "100%",
@@ -7,11 +9,12 @@ const containerStyle = {
   boxSizing: "border-box",
 };
 
-export default function Page({ params }) {
-  console.log(params);
+export default function Page() {
+  // const params = useParams();
+  // console.log("pathparams");
+  // console.log(params);
+
   return (
-    <div style={containerStyle}>
-      <MdxViewer filePath={params} />
-    </div>
+    <div style={containerStyle}>{/* <MdxViewer filePath={params} /> */}</div>
   );
 }
