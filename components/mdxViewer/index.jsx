@@ -8,6 +8,7 @@ import DynamicImage from "./DynamicImage";
 import IndexTable from "./PostIndexTable";
 import "./styles.css";
 import PostIndex from "./PostIndexTable/PostIndex";
+import dynamic from "next/dynamic";
 
 const MarkDownContainer = styled.div`
   width: 100%;
@@ -40,7 +41,18 @@ const ContentContainer = styled.div`
 //   margin: 3rem;
 // `;
 
-const MdxViewer = ({ children }) => {
+const MdxViewer = ({ filePath }) => {
+  const Post = dynamic(
+    () =>
+      import(`@/posts/blog/${filePath.postPath.join("/")}`).catch((err) => {
+        return notFound();
+      }),
+    {
+      loading: () => <p>Loading...</p>,
+      ssr: false,
+    }
+  );
+
   const components = {
     h1: ({ children }) => (
       <h1>
@@ -70,7 +82,7 @@ const MdxViewer = ({ children }) => {
       <ContentContainer>
         <MDXProvider components={components}>
           <MarkDownContainer className="markdown-body">
-            {children}
+            <Post />
           </MarkDownContainer>
         </MDXProvider>
       </ContentContainer>
