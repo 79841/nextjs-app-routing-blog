@@ -35,8 +35,8 @@ const MainCategory = ({ name, path, branches }) => {
     <MainCategoryContainer>
       {name !== "root" ? (
         <Title>
-          {/* <TitleLink href={`/blog${path.slice(blogPath.length)}/index.mdx`}> */}
-          <TitleLink href={`/blog${path}`}>
+          <TitleLink href={`/blog${path.slice(blogPath.length)}/index.mdx`}>
+            {/* <TitleLink href={`/blog${path}`}> */}
             <TitleButton
               onClick={handleClick}
               style={{
