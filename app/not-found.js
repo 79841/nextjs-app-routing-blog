@@ -15,6 +15,7 @@ const Container = styled.div`
   padding: 10%;
 `;
 export default function NotFound() {
+  console.log("not found app");
   return (
     <Container>
       <h2>Not Found</h2>
