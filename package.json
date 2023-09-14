@@ -6,7 +6,7 @@
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "build": "next build && touch out/.nojekyll",
+    "build": "next build",
     "predeploy": "npm run build"
   },
   "dependencies": {
