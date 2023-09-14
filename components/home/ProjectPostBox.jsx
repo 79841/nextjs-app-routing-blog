@@ -44,6 +44,7 @@ const ProjectPostBox = () => {
         alt=""
         width={1000}
         height={582}
+        unoptimized
       />
       <TextData />
     </Container>

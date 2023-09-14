@@ -54,6 +54,7 @@ const DynamicImage = ({ alt, src }) => {
             width: "100%",
             height: "auto",
           }}
+          unoptimized
         />
       ) : (
         <h1>Loading...</h1>

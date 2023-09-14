@@ -44,6 +44,7 @@ const BlogPostCard = () => {
         width={400}
         height={400}
         alt="react"
+        unoptimized
       />
       <TextData />
     </Container>
