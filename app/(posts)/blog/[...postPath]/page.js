@@ -1,9 +1,4 @@
-"use client";
 import MdxViewer from "@/components/mdxViewer";
-import dynamic from "next/dynamic";
-import { notFound, useParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import { styled } from "styled-components";
 
 const containerStyle = {
   width: "100%",
