@@ -1,5 +1,5 @@
 // import "../../../globals.css";
-"use client";
+// "use client";
 
 export const metadata = {
   title: "Create Next App",
