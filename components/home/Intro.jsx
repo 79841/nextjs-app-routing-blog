@@ -98,7 +98,7 @@ const SymbolTextBox = styled.div`
 const Symbol = ({ text, imgSrc, handleMouseOver, handleMouseOut }) => {
   return (
     <SymbolBox>
-      <SymbolImage src={imgSrc} alt={text} fill />
+      <SymbolImage src={imgSrc} alt={text} fill unoptimized />
       <SymbolTextBox onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
         {text}
       </SymbolTextBox>
