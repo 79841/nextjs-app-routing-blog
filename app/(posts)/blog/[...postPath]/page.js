@@ -8,6 +8,7 @@ const containerStyle = {
 };
 
 export default function Page({ params }) {
+  console.log(params);
   return (
     <div style={containerStyle}>
       <MdxViewer filePath={params} />
