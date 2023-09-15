@@ -36,18 +36,10 @@ const ContentContainer = styled.div`
   min-width: 40rem;
 `;
 
-// const IndexTableContainer = styled.div`
-//   min-width: 35rem;
-//   height: 100%;
-//   margin: 3rem;
-// `;
-
-const MdxViewer = ({ filePath }) => {
-  console.log("mdxviewer");
-  console.log(filePath);
+const MdxViewer = ({ postPath }) => {
   const Post = dynamic(
     () =>
-      import(`@/posts/blog/${filePath.postPath.join("/")}`).catch((err) => {
+      import(`@/posts/blog/${postPath.join("/")}`).catch((err) => {
         return notFound();
       }),
     {
