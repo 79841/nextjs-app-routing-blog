@@ -28,8 +28,6 @@ const List = styled.ul`
 `;
 
 const MainCategory = ({ name, path, branches }) => {
-  // console.log(path);
-  console.log(`/blog${path.slice(BLOG_POSTS_DIR.length)}/index.mdx`);
   const handleClick = useBptContext();
   return (
     <MainCategoryContainer>

@@ -24,24 +24,7 @@ const Container = styled.div`
 `;
 
 const Topbar = () => {
-  // const [isScrolling, setIsScrolling] = useState(false);
-
-  // useEffect(() => {
-  //   function handleScroll() {
-  //     if (window.scrollY > 0) {
-  //       setIsScrolling(true);
-  //     } else {
-  //       setIsScrolling(false);
-  //     }
-  //   }
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
   return (
-    // <Container isScrolling={isScrolling}>
     <Container>
       <Logo />
       <Nav />

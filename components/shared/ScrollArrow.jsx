@@ -15,7 +15,6 @@ const ScrollArrow = ({ scrollPointRef }) => {
   const [scrollPoint, setScrollPoint] = useState(0);
 
   const handleClick = () => {
-    console.log(scrollPoint);
     if (scrollPoint === scrollPointRef.current.length - 1) {
       scrollPointRef.current[0].scrollIntoView({ behavior: "smooth" });
       setScrollPoint(0);

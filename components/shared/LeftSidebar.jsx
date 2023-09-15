@@ -1,17 +1,4 @@
-// "use client";
-// import { styled } from "styled-components";
-
 import PostTree from "@/server/components/PostTree";
-
-// const Container = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   height: 100vh;
-//   background-color: #aaa;
-//   left: 0;
-//   top: 3rem;
-//   width: 50rem;
-// `;
 
 const containerStyle = {
   display: "flex",

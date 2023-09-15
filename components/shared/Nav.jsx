@@ -9,11 +9,6 @@ const Container = styled.ul`
   z-index: 100;
 `;
 
-// const StyledLink = styled(Link)`
-//   text-decoration: none;
-//   color: black;
-//   font-size: 1.2rem;
-// `;
 const ListStyle = {
   display: "flex",
   justifyContent: "space-evenly",

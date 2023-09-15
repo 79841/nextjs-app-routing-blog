@@ -18,7 +18,6 @@ const Post = ({ tree }) => {
     return null;
   }
   const link = `/blog${tree.path.slice(BLOG_POSTS_DIR.length)}`;
-  // const link = filePath.slice(filePath.lastIndexOf("."));
   return (
     <StyledLi>
       <TitleLink href={link}>

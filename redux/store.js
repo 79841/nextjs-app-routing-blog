@@ -1,5 +1,3 @@
-// redux/store.js
-
 import { configureStore } from "@reduxjs/toolkit";
 import postSelectorSlice from "./features/postSelectorSlice";
 import postIndexTableMakerSlice from "./features/postIndexTableMakerSlice";

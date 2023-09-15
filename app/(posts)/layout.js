@@ -1,4 +1,3 @@
-// import "../globals.css";
 import LeftSidebar from "@/components/shared/LeftSidebar";
 import RightSidebar from "@/components/shared/RightSidebar";
 

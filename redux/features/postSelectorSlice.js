@@ -1,5 +1,3 @@
-// redux/counterSlice.js
-
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -11,7 +9,6 @@ const postSelectorSlice = createSlice({
   initialState,
   reducers: {
     select: (state, action) => {
-      console.log(action);
       state.selectedPost = action.payload;
     },
   },

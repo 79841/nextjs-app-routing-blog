@@ -11,7 +11,6 @@ const PostIndex = ({ children, level }) => {
   useEffect(() => {
     function handleScroll() {}
 
-    // dispatch(add({ name: children, level }));
     dispatch(add({ ref: ref.current, level }));
     window.addEventListener("scroll", handleScroll);
     return () => {
