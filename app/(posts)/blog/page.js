@@ -1,6 +1,9 @@
 // "use client";
 // import { styled } from "styled-components";
 
+import { BLOG_POSTS_DIR } from "@/components/PostTree/config";
+import { makeFileBasedDynamicPath } from "@/utils/makeFileBasedPostTree";
+
 // import { useParams } from "next/navigation";
 
 // const Container = styled.div`
@@ -18,6 +21,11 @@ const style = {
 };
 
 const Blog = () => {
+  const postTree = makeFileBasedDynamicPath(BLOG_POSTS_DIR);
+  const dynamicPath = postTree.map((post) => ({
+    params: `${post.slice(BLOG_POSTS_DIR.length)}`.split("/").splice(1),
+  }));
+  console.log(dynamicPath);
   return <div style={style}>Blog</div>;
 };
 

@@ -5,7 +5,7 @@ import {
   MainCategoryFontWeight,
   postTreeFontSize,
 } from "./style";
-import { blogPath } from "./config";
+import { BLOG_POSTS_DIR, blogPath } from "./config";
 import { useBptContext } from "./PostTree";
 
 const MainCategoryContainer = styled.div`
@@ -29,13 +29,15 @@ const List = styled.ul`
 
 const MainCategory = ({ name, path, branches }) => {
   // console.log(path);
-  console.log(`/blog${path.slice(blogPath.length)}/index.mdx`);
+  console.log(`/blog${path.slice(BLOG_POSTS_DIR.length)}/index.mdx`);
   const handleClick = useBptContext();
   return (
     <MainCategoryContainer>
       {name !== "root" ? (
         <Title>
-          <TitleLink href={`/blog${path.slice(blogPath.length)}/index.mdx`}>
+          <TitleLink
+            href={`/blog${path.slice(BLOG_POSTS_DIR.length)}/index.mdx`}
+          >
             {/* <TitleLink href={`/blog${path}`}> */}
             <TitleButton
               onClick={handleClick}

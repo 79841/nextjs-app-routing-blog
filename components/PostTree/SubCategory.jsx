@@ -11,7 +11,7 @@ import Name, {
   TitleLink,
   TitleVerticalBar,
 } from "./Title";
-import { blogPath } from "./config";
+import { BLOG_POSTS_DIR } from "./config";
 const Container = styled.div``;
 
 const List = styled.ul`
@@ -51,7 +51,7 @@ const SubCategory = ({ name, path, branches }) => {
   return (
     <Container>
       <Title>
-        <TitleLink href={`/blog${path.slice(blogPath.length)}/index.mdx`}>
+        <TitleLink href={`/blog${path.slice(BLOG_POSTS_DIR.length)}/index.mdx`}>
           <TitleButton
             onClick={(e) => {
               handleClick();
@@ -59,7 +59,7 @@ const SubCategory = ({ name, path, branches }) => {
             }}
           >
             {Array.from({
-              length: path.slice(blogPath.length).split("/").length - 2,
+              length: path.slice(BLOG_POSTS_DIR.length).split("/").length - 2,
             }).map((_, i) => (
               <TitleVerticalBar key={i} />
             ))}

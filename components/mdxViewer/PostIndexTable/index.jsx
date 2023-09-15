@@ -60,7 +60,6 @@ const PostIndexTable = () => {
           return acc;
         }
       });
-      // console.log(currentContent);
       setCurrentContent(currentContent.ref.innerText);
     };
     window.addEventListener("scroll", handleScroll);
@@ -68,12 +67,10 @@ const PostIndexTable = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [postTable]);
-  console.log("render");
   return (
     <Container>
       {postTable.map((postIndex, i) => {
         const indexName = postIndex.ref.innerText;
-        console.log("check");
         const color =
           indexName === currentContent ? highlightColor : normalColor;
         return (

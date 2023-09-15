@@ -1,6 +1,8 @@
-"use client";
+import { BLOG_POSTS_DIR } from "@/components/PostTree/config";
 import MdxViewer from "@/components/mdxViewer";
-import { useParams } from "next/navigation";
+import makeFileBasedPostTree, {
+  makeFileBasedDynamicPath,
+} from "@/utils/makeFileBasedPostTree";
 
 const containerStyle = {
   width: "100%",
@@ -9,14 +11,19 @@ const containerStyle = {
   boxSizing: "border-box",
 };
 
-export default function Page() {
-  const params = useParams();
-  console.log("pathparams");
+export default function Page({ params }) {
   console.log(params);
-
   return (
     <div style={containerStyle}>
       <MdxViewer filePath={params} />
     </div>
   );
+}
+
+export async function generateStaticParams() {
+  const postTree = makeFileBasedDynamicPath(BLOG_POSTS_DIR);
+  const dynamicPath = postTree.map((post) => ({
+    params: `${post.slice(BLOG_POSTS_DIR.length)}`.split("/").splice(1),
+  }));
+  return dynamicPath;
 }
