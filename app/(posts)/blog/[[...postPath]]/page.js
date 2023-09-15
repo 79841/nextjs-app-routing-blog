@@ -8,7 +8,9 @@ const containerStyle = {
   boxSizing: "border-box",
 };
 
-export default function Page({ params: { postPath } }) {
+export default function Page({ params }) {
+  console.log(params);
+  const { postPath } = params;
   return (
     <div style={containerStyle}>
       {postPath ? <MdxViewer postPath={postPath} /> : <h1>Blog Main</h1>}
@@ -18,8 +20,11 @@ export default function Page({ params: { postPath } }) {
 
 export async function generateStaticParams() {
   const postTree = makeFileBasedDynamicPath(BLOG_POSTS_DIR);
-  const dynamicPath = postTree.map((post) => ({
-    postPath: `${post.slice(BLOG_POSTS_DIR.length)}`.split("/").splice(1),
-  }));
+  const dynamicPath = [
+    ...postTree.map((post) => ({
+      postPath: `${post.slice(BLOG_POSTS_DIR.length)}`.split("/").splice(1),
+    })),
+    { postPath: [] },
+  ];
   return dynamicPath;
 }
