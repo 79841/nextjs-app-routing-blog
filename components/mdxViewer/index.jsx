@@ -10,6 +10,7 @@ import IndexTable from "./PostIndexTable";
 import "./styles.css";
 import PostIndex from "./PostIndexTable/PostIndex";
 import dynamic from "next/dynamic";
+import { notFound } from "next/navigation";
 
 const MarkDownContainer = styled.div`
   width: 100%;

@@ -12,7 +12,7 @@ const Container = styled.ul`
 const ListStyle = {
   display: "flex",
   justifyContent: "space-evenly",
-  width: "15rem",
+  // width: "20%",
   listStyle: "none",
   zIndex: 100,
 };
@@ -21,6 +21,7 @@ const LinkStyle = {
   textDecoration: "none",
   color: "black",
   fontSize: "1.2rem",
+  margin: "0.5rem",
 };
 
 const Nav = () => {

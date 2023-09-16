@@ -1,5 +1,5 @@
 import LeftSidebar from "@/components/shared/LeftSidebar";
-import "../../../globals.css";
+// import "../../../globals.css";
 import RightSidebar from "@/components/shared/RightSidebar";
 import { BLOG_POSTS_DIR } from "@/components/PostTree/config";
 

@@ -11,6 +11,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  width: 100%;
 `;
 
 export default function Home() {

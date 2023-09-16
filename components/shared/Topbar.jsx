@@ -9,7 +9,7 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  position: fixed;
+  position: sticky;
   width: 100%;
   padding-left: 10%;
   padding-right: 10%;

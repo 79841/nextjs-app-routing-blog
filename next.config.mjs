@@ -10,6 +10,10 @@ const nextConfig = {
       "cdn3.vectorstock.com",
       "legacy.reactjs.org",
       "d604h6pkko9r0.cloudfront.net",
+      "i.namu.wiki",
+      "upload.wikimedia.org",
+      "images-platform.99static.com",
+      "logowik.com",
     ],
   },
   compiler: {

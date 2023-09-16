@@ -18,7 +18,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 10rem;
-  width: 70rem;
+  width: 60%;
   margin-bottom: 15rem;
 `;
 
@@ -124,7 +124,7 @@ const Intro = ({ scrollPointRef }) => {
       <SymbolsContainer>
         <ShowBox delay={"0.3s"}>
           <Symbol
-            text="Developer"
+            text="React"
             imgSrc={"https://legacy.reactjs.org/logo-og.png"}
             handleMouseOver={handleMouseOver}
             handleMouseOut={handleMouseOut}
@@ -132,32 +132,40 @@ const Intro = ({ scrollPointRef }) => {
         </ShowBox>
         <ShowBox delay={"0.5s"}>
           <Symbol
-            text="Developer"
-            imgSrc={"https://legacy.reactjs.org/logo-og.png"}
+            text="Nextjs"
+            imgSrc={
+              "https://d604h6pkko9r0.cloudfront.net/wp-content/uploads/2021/03/29113740/nextjs-cover.jpg"
+            }
             handleMouseOver={handleMouseOver}
             handleMouseOut={handleMouseOut}
           />
         </ShowBox>
         <ShowBox delay={"0.7s"}>
           <Symbol
-            text="Developer"
-            imgSrc={"https://legacy.reactjs.org/logo-og.png"}
+            text="Typescript"
+            imgSrc={
+              "https://logowik.com/content/uploads/images/typescript2034.jpg"
+            }
             handleMouseOver={handleMouseOver}
             handleMouseOut={handleMouseOut}
           />
         </ShowBox>
         <ShowBox delay={"0.9s"}>
           <Symbol
-            text="Developer"
-            imgSrc={"https://legacy.reactjs.org/logo-og.png"}
+            text="Javascript"
+            imgSrc={
+              "https://i.namu.wiki/i/vlGWS9ndOh9jGZsJlZLz5lVF1mN4SozXp3gJh28HCd0jIREKDmkPu2Fg4sxqx0Cf5DlIgm5LRcDsSMCelk1VR8aGSEE8MHbqL-NrO0mcB1XH6b86zJUrqKFZEfaWqYtSM3ePqZe92SW_fzyaIQFTAA.svg"
+            }
             handleMouseOver={handleMouseOver}
             handleMouseOut={handleMouseOut}
           />
         </ShowBox>
         <ShowBox delay={"1.1s"}>
           <Symbol
-            text="Developer"
-            imgSrc={"https://legacy.reactjs.org/logo-og.png"}
+            text="Web Hacking"
+            imgSrc={
+              "https://images-platform.99static.com//UUYpXRPoW4zZsS-8aKdYShUzQNk=/0x0:1812x1812/fit-in/590x590/99designs-contests-attachments/132/132674/attachment_132674120"
+            }
             handleMouseOver={handleMouseOver}
             handleMouseOut={handleMouseOut}
           />

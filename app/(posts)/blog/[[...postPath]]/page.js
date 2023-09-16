@@ -9,7 +9,6 @@ const containerStyle = {
 };
 
 export default function Page({ params }) {
-  console.log(params);
   const { postPath } = params;
   return (
     <div style={containerStyle}>
