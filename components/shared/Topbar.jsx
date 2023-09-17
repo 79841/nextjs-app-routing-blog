@@ -18,9 +18,13 @@ const Container = styled.div`
   box-sizing: border-box;
   background-color: transparent;
   z-index: 100;
-
+  /* 
   box-shadow: ${({ isScrolling }) =>
-    isScrolling ? "0px 10px 5px 0px rgba(222,222,222,0.75)" : "none"};
+    isScrolling ? "0px 10px 5px 0px rgba(222,222,222,0.75)" : "none"}; */
+  @media screen and (max-width: 500px) {
+    padding: 1rem;
+    height: 3rem;
+  }
 `;
 
 const Topbar = () => {

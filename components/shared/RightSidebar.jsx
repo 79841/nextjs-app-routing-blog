@@ -8,7 +8,7 @@ const style = {
   width: "30%",
   minWidth: "20rem",
   paddingLeft: "2rem",
-  height: "100vh",
+  height: "100%",
 };
 
 const RightSidebar = () => {

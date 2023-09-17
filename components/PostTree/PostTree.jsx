@@ -22,9 +22,10 @@ import Post from "./Post";
 
 const Container = styled.div`
   position: sticky;
-  width: 15rem;
-  top: 10rem;
+  width: 18rem;
+  top: 9rem;
   right: 0;
+  overflow: hidden;
 `;
 
 const Category = ({ tree }) => {

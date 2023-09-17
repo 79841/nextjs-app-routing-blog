@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const Container = styled.div`
   position: sticky;
-  top: 10rem;
+  top: 9rem;
   display: flex;
   flex-direction: column;
 `;
@@ -24,6 +24,8 @@ const Index = styled.div`
   height: 100%;
   height: 1.5rem;
   display: flex;
+  font-size: 0.8rem;
+  overflow: hidden;
 `;
 
 const StyledLink = styled(Link)`

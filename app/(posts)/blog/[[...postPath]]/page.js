@@ -4,15 +4,18 @@ import { makeFileBasedDynamicPath } from "@/utils/makeFileBasedPostTree";
 
 const containerStyle = {
   width: "100%",
-  paddingTop: "7rem",
   boxSizing: "border-box",
+  margin: "4rem 0 4rem 0",
 };
 
-export default function Page({ params }) {
-  const { postPath } = params;
+export default function Page({ params: { postPath } }) {
   return (
     <div style={containerStyle}>
-      {postPath ? <MdxViewer postPath={postPath} /> : <h1>Blog Main</h1>}
+      {postPath ? (
+        <MdxViewer postPath={postPath.map((e) => decodeURIComponent(e))} />
+      ) : (
+        <h1>Blog Main</h1>
+      )}
     </div>
   );
 }

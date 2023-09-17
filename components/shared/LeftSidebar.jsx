@@ -3,7 +3,7 @@ import PostTree from "@/server/components/PostTree";
 const containerStyle = {
   display: "flex",
   flexDirection: "column",
-  height: "100vh",
+  height: "100%",
   left: "0",
   top: "3rem",
   width: "30%",

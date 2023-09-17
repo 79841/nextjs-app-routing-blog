@@ -14,12 +14,12 @@ import { notFound } from "next/navigation";
 
 const MarkDownContainer = styled.div`
   width: 100%;
-  border: 2px solid #cfcfcf;
+  /* border: 2px solid #cfcfcf; */
   box-sizing: border-box;
-  padding: 2rem;
-  padding-top: 3em;
+  /* padding: 2rem; */
   border-radius: 0.5rem;
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: transparent;
   min-height: 40rem;
 `;
 
@@ -32,7 +32,7 @@ const Container = styled.div`
 const ContentContainer = styled.div`
   flex: 1;
   height: 100%;
-  margin: 2rem;
+  /* margin: 2rem; */
   max-width: 60rem;
   min-width: 40rem;
 `;
@@ -51,19 +51,19 @@ const MdxViewer = ({ postPath }) => {
 
   const components = {
     h1: ({ children }) => (
-      <h1>
+      <h1 style={{ fontSize: "1.7rem" }}>
         <PostIndex level={1}>{children}</PostIndex>
       </h1>
     ),
     h2: ({ children }) => (
-      <h1>
+      <h2>
         <PostIndex level={2}>{children}</PostIndex>
-      </h1>
+      </h2>
     ),
     h3: ({ children }) => (
-      <h1>
+      <h3>
         <PostIndex level={3}>{children}</PostIndex>
-      </h1>
+      </h3>
     ),
 
     pre: ({ children }) => <>{children}</>,
