@@ -34,7 +34,7 @@ const MainCategory = ({ name, path, branches }) => {
       {name !== "root" ? (
         <Title>
           <TitleLink
-            href={`/blog${path.slice(BLOG_POSTS_DIR.length)}/index.mdx`}
+            href={`/blog${path.slice(BLOG_POSTS_DIR.length)}/index`}
           >
             {/* <TitleLink href={`/blog${path}`}> */}
             <TitleButton

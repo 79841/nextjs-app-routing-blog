@@ -7,6 +7,7 @@ const Container = styled.div`
   margin-top: 1rem;
   background-color: white;
   box-shadow: 10px 10px 5px 0px rgba(189, 189, 189, 0.75);
+  width: 20rem;
 `;
 
 const Thumbnail = styled(Image)`

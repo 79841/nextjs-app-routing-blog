@@ -31,35 +31,40 @@ const DynamicImage = ({ alt, src }) => {
   }, [src]);
 
   return (
-    <div
-      ref={ref}
-      style={{
-        width: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        marginTop: "2rem",
-        position: "relative",
-      }}
-    >
-      {imageSize !== null ? (
-        <NextImage
-          alt={alt}
-          src={src}
-          width={Math.round(imageSize[0])}
-          height={Math.round(imageSize[1])}
-          quality={100}
-          style={{
-            objectFit: "contain",
-            maxHeight: "30rem",
-            width: "100%",
-            height: "auto",
-          }}
-          unoptimized
-        />
-      ) : (
-        <h1>Loading...</h1>
-      )}
+    <div style={{
+      width:"100%",
+      display:"flex",
+      alignItems:"center",
+      justifyContent:"center",
+      maxHeight:"30rem",
+    }}>
+      <div
+        ref={ref}
+        style={{
+          width: "80%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
+          height:"100%",
+        }}
+      >
+        {imageSize !== null ? (
+          <NextImage
+            alt={alt}
+            src={src}
+            width={Math.round(imageSize[0])}
+            height={Math.round(imageSize[1])}
+            quality={100}
+            style={{
+              objectFit: "contain",
+            }}
+            unoptimized
+          />
+        ) : (
+          <h1>Loading...</h1>
+        )}
+      </div>
     </div>
   );
 };

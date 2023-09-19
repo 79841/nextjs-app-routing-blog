@@ -7,7 +7,7 @@ import { ScrollShowBox } from "../ShowBox";
 const Container = styled.div`
   padding-top: 5rem;
   margin-bottom: 10rem;
-  width: 70rem;
+  width: 60%;
 `;
 
 const Index = styled.div`
@@ -20,6 +20,7 @@ const Index = styled.div`
 const BlogPostContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 `;
 
 const BlogPreview = ({ scrollPointRef }) => {

@@ -5,7 +5,7 @@ import CodeBlock from "./CodeBlock";
 import "github-markdown-css";
 import { styled } from "styled-components";
 import Image from "next/image";
-import DynamicImage from "./DynamicImage";
+import DynamicImage from "./image/DynamicImage";
 import IndexTable from "./PostIndexTable";
 import "./styles.css";
 import PostIndex from "./PostIndexTable/PostIndex";
@@ -14,11 +14,8 @@ import { notFound } from "next/navigation";
 
 const MarkDownContainer = styled.div`
   width: 100%;
-  /* border: 2px solid #cfcfcf; */
   box-sizing: border-box;
-  /* padding: 2rem; */
   border-radius: 0.5rem;
-  /* background-color: #fff; */
   background-color: transparent;
   min-height: 40rem;
 `;
@@ -37,15 +34,14 @@ const ContentContainer = styled.div`
   min-width: 40rem;
 `;
 
-const MdxViewer = ({ postPath }) => {
+const MdxViewer = ({ postPath, ImageBox }) => {
   const Post = dynamic(
     () =>
-      import(`@/posts/blog/${postPath.join("/")}`).catch((err) => {
+      import(`@/posts/${postPath}.mdx`).catch((err) => {
         return notFound();
       }),
     {
       loading: () => <p>Loading...</p>,
-      ssr: false,
     }
   );
 
@@ -69,8 +65,12 @@ const MdxViewer = ({ postPath }) => {
     pre: ({ children }) => <>{children}</>,
     code: CodeBlock,
 
-    p: ({ children }) => <div style={{ width: "100%" }}>{children}</div>,
-    img: DynamicImage,
+    p: ({ children }) => (
+      <div style={{ width: "100%", backgroundColor: "transparent" }}>
+        {children}
+      </div>
+    ),
+    img: ImageBox ? ImageBox : DynamicImage,
   };
 
   return (
@@ -78,9 +78,7 @@ const MdxViewer = ({ postPath }) => {
       <ContentContainer>
         <MDXProvider components={components}>
           <MarkDownContainer className="markdown-body">
-            <Suspense>
-              <Post />
-            </Suspense>
+            <Post />
           </MarkDownContainer>
         </MDXProvider>
       </ContentContainer>

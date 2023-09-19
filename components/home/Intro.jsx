@@ -20,6 +20,9 @@ const Container = styled.div`
   padding-top: 10rem;
   width: 60%;
   margin-bottom: 15rem;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 const Phrases = styled.div`
@@ -27,6 +30,9 @@ const Phrases = styled.div`
   text-align: center;
   margin-bottom: 3rem;
   animation: ${animation} 1s;
+  @media screen and (max-width: 500px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -69,6 +75,14 @@ const SymbolBox = styled.div`
   &:hover img {
     transform: scale(1.1);
   }
+
+  @media screen and (max-width: 500px) {
+    position: relative;
+    width: 100%;
+    padding-top: 50%;
+    margin: 0;
+    height: 4rem;
+  }
 `;
 
 const SymbolImage = styled(Image)`
@@ -93,26 +107,46 @@ const SymbolTextBox = styled.div`
   opacity: 0;
   transition: all 0.5s;
   display: flex;
+  &:hover {
+    opacity: 1;
+  }
 `;
 
-const Symbol = ({ text, imgSrc, handleMouseOver, handleMouseOut }) => {
+const Symbol = ({ text, imgSrc, delay }) => {
   return (
     <SymbolBox>
-      <SymbolImage src={imgSrc} alt={text} fill unoptimized />
-      <SymbolTextBox onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-        {text}
-      </SymbolTextBox>
+      <ShowBox delay={delay}>
+        <SymbolImage src={imgSrc} alt={text} fill unoptimized />
+        <SymbolTextBox>{text}</SymbolTextBox>
+      </ShowBox>
     </SymbolBox>
   );
 };
 
 const Intro = ({ scrollPointRef }) => {
-  const handleMouseOver = ({ target }) => {
-    target.style.opacity = "1";
-  };
-  const handleMouseOut = ({ target }) => {
-    target.style.opacity = "0";
-  };
+  const symbols = [
+    { name: "React", imgSrc: "https://legacy.reactjs.org/logo-og.png" },
+    {
+      name: "Nextjs",
+      imgSrc:
+        "https://d604h6pkko9r0.cloudfront.net/wp-content/uploads/2021/03/29113740/nextjs-cover.jpg",
+    },
+    {
+      name: "Typescript",
+      imgSrc: "https://logowik.com/content/uploads/images/typescript2034.jpg",
+    },
+    {
+      name: "Javascript",
+      imgSrc:
+        "https://i.namu.wiki/i/vlGWS9ndOh9jGZsJlZLz5lVF1mN4SozXp3gJh28HCd0jIREKDmkPu2Fg4sxqx0Cf5DlIgm5LRcDsSMCelk1VR8aGSEE8MHbqL-NrO0mcB1XH6b86zJUrqKFZEfaWqYtSM3ePqZe92SW_fzyaIQFTAA.svg",
+    },
+    {
+      name: "Web Hacking",
+      imgSrc:
+        "https://images-platform.99static.com//UUYpXRPoW4zZsS-8aKdYShUzQNk=/0x0:1812x1812/fit-in/590x590/99designs-contests-attachments/132/132674/attachment_132674120",
+    },
+  ];
+
   return (
     <Container ref={scrollPointRef}>
       <Phrases>
@@ -122,15 +156,20 @@ const Intro = ({ scrollPointRef }) => {
       </Phrases>
 
       <SymbolsContainer>
-        <ShowBox delay={"0.3s"}>
+        {symbols.map((symbol, i) => (
           <Symbol
+            key={i}
+            text={symbol.name}
+            imgSrc={symbol.imgSrc}
+            delay={`${0.2 * i}s`}
+          />
+        ))}
+        {/* <Symbol
             text="React"
             imgSrc={"https://legacy.reactjs.org/logo-og.png"}
             handleMouseOver={handleMouseOver}
             handleMouseOut={handleMouseOut}
           />
-        </ShowBox>
-        <ShowBox delay={"0.5s"}>
           <Symbol
             text="Nextjs"
             imgSrc={
@@ -139,8 +178,6 @@ const Intro = ({ scrollPointRef }) => {
             handleMouseOver={handleMouseOver}
             handleMouseOut={handleMouseOut}
           />
-        </ShowBox>
-        <ShowBox delay={"0.7s"}>
           <Symbol
             text="Typescript"
             imgSrc={
@@ -149,8 +186,6 @@ const Intro = ({ scrollPointRef }) => {
             handleMouseOver={handleMouseOver}
             handleMouseOut={handleMouseOut}
           />
-        </ShowBox>
-        <ShowBox delay={"0.9s"}>
           <Symbol
             text="Javascript"
             imgSrc={
@@ -159,8 +194,6 @@ const Intro = ({ scrollPointRef }) => {
             handleMouseOver={handleMouseOver}
             handleMouseOut={handleMouseOut}
           />
-        </ShowBox>
-        <ShowBox delay={"1.1s"}>
           <Symbol
             text="Web Hacking"
             imgSrc={
@@ -168,8 +201,7 @@ const Intro = ({ scrollPointRef }) => {
             }
             handleMouseOver={handleMouseOver}
             handleMouseOut={handleMouseOut}
-          />
-        </ShowBox>
+          /> */}
       </SymbolsContainer>
       {/* <ImageContainer>
         <StyledImage

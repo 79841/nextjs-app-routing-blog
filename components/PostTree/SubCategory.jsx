@@ -51,7 +51,7 @@ const SubCategory = ({ name, path, branches }) => {
   return (
     <Container>
       <Title>
-        <TitleLink href={`/blog${path.slice(BLOG_POSTS_DIR.length)}/index.mdx`}>
+        <TitleLink href={`/blog${path.slice(BLOG_POSTS_DIR.length)}/index`}>
           <TitleButton
             onClick={(e) => {
               handleClick();

@@ -42,6 +42,11 @@ const Nav = () => {
           Project
         </Link>
       </li>
+      <li>
+        <Link style={LinkStyle} href="/career">
+          Career
+        </Link>
+      </li>
     </ul>
   );
 };

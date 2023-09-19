@@ -9,10 +9,16 @@ const containerStyle = {
 };
 
 export default function Page({ params: { postPath } }) {
+  const realPostPath = postPath
+    ? `blog/${postPath.map((e) => decodeURIComponent(e)).join("/")}`
+    : null;
+
+  console.log(realPostPath);
+
   return (
     <div style={containerStyle}>
-      {postPath ? (
-        <MdxViewer postPath={postPath.map((e) => decodeURIComponent(e))} />
+      {realPostPath ? (
+        <MdxViewer postPath={realPostPath} />
       ) : (
         <h1>Blog Main</h1>
       )}

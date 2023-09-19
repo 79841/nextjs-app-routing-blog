@@ -7,7 +7,7 @@ import { ScrollShowBox } from "../ShowBox";
 const Container = styled.div`
   margin-top: 5rem;
   margin-bottom: 15rem;
-  width: 70rem;
+  width: 100%;
 `;
 
 const Index = styled.div`

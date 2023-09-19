@@ -17,7 +17,9 @@ const Post = ({ tree }) => {
   if (tree.name === "index.mdx") {
     return null;
   }
-  const link = `/blog${tree.path.slice(BLOG_POSTS_DIR.length)}`;
+  const link = `/blog${tree.path
+    .slice(0, tree.path.lastIndexOf("."))
+    .slice(BLOG_POSTS_DIR.length)}`;
   return (
     <StyledLi>
       <TitleLink href={link}>
