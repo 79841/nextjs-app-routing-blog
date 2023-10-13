@@ -8,13 +8,13 @@ export const metadata = {
 const containerStyle = {
   width: "40rem",
   boxSizing: "border-box",
-//   margin: "4rem 0 4rem 0",
+  //   margin: "4rem 0 4rem 0",
 };
 
 export default function Page() {
   return (
     <div style={containerStyle}>
-      <MdxViewer postPath={"career/index.mdx"} ImageBox={CareerImage} />
+      <MdxViewer postPath={"career/index"} ImageBox={CareerImage} />
     </div>
   );
 }

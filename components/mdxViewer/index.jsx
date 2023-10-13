@@ -35,6 +35,7 @@ const ContentContainer = styled.div`
 `;
 
 const MdxViewer = ({ postPath, ImageBox }) => {
+  console.log(postPath);
   const Post = dynamic(
     () =>
       import(`@/posts/${postPath}.mdx`).catch((err) => {

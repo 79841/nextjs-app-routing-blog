@@ -26,6 +26,7 @@ const makeFileBasedPostTree = (
 ) => {
   const files = fs.readdirSync(path, { withFileTypes: true });
   for (let file of files) {
+    // if (file.name.startsWith(".")) continue;
     let filePath = `${path}/${file.name}`;
     if (file.isDirectory()) {
       const type = recursionCount === 0 ? "category" : "sub_category";
@@ -38,6 +39,7 @@ const makeFileBasedPostTree = (
       fileTree.children.push(newDir);
       makeFileBasedPostTree(filePath, newDir, recursionCount + 1);
     } else {
+      // if (!file.name.endsWith(".mdx")) continue;
       fileTree.children.push({ name: file.name, type: "post", path: filePath });
     }
   }
