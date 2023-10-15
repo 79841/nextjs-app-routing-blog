@@ -8,6 +8,13 @@ const Container = styled.div`
   padding-top: 5rem;
   margin-bottom: 10rem;
   width: 60%;
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
 `;
 
 const Index = styled.div`
@@ -21,6 +28,11 @@ const BlogPostContainer = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const BlogPreview = ({ scrollPointRef }) => {

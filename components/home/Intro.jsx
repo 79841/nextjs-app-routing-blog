@@ -77,11 +77,8 @@ const SymbolBox = styled.div`
   }
 
   @media screen and (max-width: 500px) {
-    position: relative;
-    width: 100%;
-    padding-top: 50%;
-    margin: 0;
-    height: 4rem;
+    width: 20rem;
+    height: 20rem;
   }
 `;
 

@@ -1,5 +1,6 @@
 import LeftSidebar from "@/components/shared/LeftSidebar";
 import RightSidebar from "@/components/shared/RightSidebar";
+import "./style.css";
 
 export const metadata = {
   title: "Create Next App",
@@ -14,5 +15,9 @@ const postsContainerStyle = {
 };
 
 export default function PostsLayout({ children }) {
-  return <main style={postsContainerStyle}>{children}</main>;
+  return (
+    <main className="post-layout" style={postsContainerStyle}>
+      {children}
+    </main>
+  );
 }

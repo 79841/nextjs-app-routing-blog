@@ -1,0 +1,11 @@
+@media (max-width: 500px) {
+  .post-layout {
+    flex-direction: column;
+  }
+  .left-sidebar {
+    background-color: #fbfbfb;
+    position: absolute;
+    height: auto !important;
+    width: 100% !important;
+  }
+}

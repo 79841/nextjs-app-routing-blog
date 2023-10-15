@@ -14,7 +14,7 @@ const containerStyle = {
 
 const LeftSidebar = async ({ postsDir }) => {
   return (
-    <div style={containerStyle}>
+    <div style={containerStyle} className="left-sidebar">
       <PostTree postsDir={postsDir} />
     </div>
   );

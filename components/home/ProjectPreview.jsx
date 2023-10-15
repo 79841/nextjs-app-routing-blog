@@ -3,6 +3,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import ProjectPostBox from "./ProjectPostBox";
 import { ScrollShowBox } from "../ShowBox";
+import BlogPostCard from "./BlogPost";
 
 const Container = styled.div`
   margin-top: 5rem;
@@ -17,6 +18,17 @@ const Index = styled.div`
   text-align: center;
 `;
 
+const BlogPostContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
 const ProjectPreview = ({ scrollPointRef }) => {
   return (
     <Container ref={scrollPointRef}>
@@ -24,8 +36,11 @@ const ProjectPreview = ({ scrollPointRef }) => {
         <Index>Project</Index>
       </ScrollShowBox>
       <ScrollShowBox>
-        <ProjectPostBox />
-        <ProjectPostBox />
+        <BlogPostContainer>
+          <BlogPostCard />
+          <BlogPostCard />
+          <BlogPostCard />
+        </BlogPostContainer>
       </ScrollShowBox>
     </Container>
   );

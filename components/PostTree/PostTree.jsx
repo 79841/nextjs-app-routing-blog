@@ -26,6 +26,10 @@ const Container = styled.div`
   top: 9rem;
   right: 0;
   overflow: hidden;
+  display: block;
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const Category = ({ tree }) => {
@@ -60,10 +64,20 @@ const LinkTree = ({ tree }) => {
   }
 };
 
+const DropDownButton = ({ targetRef }) => {
+  const handleClick = () => {
+    const display = targetRef.current.style.display;
+    console.log(display);
+    targetRef.current.style.display = "block";
+  };
+  return <button onClick={handleClick}>Menu</button>;
+};
+
 const BptContext = createContext();
 export const useBptContext = () => useContext(BptContext);
 
 const PostTree = ({ tree }) => {
+  const ref = useRef(null);
   const [selected, setSelected] = useState(null);
   const handleSelect = ({ target }) => {
     if (selected !== null && selected !== target) {
@@ -80,7 +94,8 @@ const PostTree = ({ tree }) => {
   }, [selected]);
   return (
     <BptContext.Provider value={handleSelect}>
-      <Container>
+      <DropDownButton targetRef={ref} />
+      <Container ref={ref}>
         <LinkTree tree={tree} />
       </Container>
     </BptContext.Provider>
